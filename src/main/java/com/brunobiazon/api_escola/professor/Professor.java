@@ -20,7 +20,7 @@ public class Professor {
     private  Long id;
     private String nome;
     private String email;
-    private String matricula;
+    private String formacao;
 
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
