@@ -23,7 +23,7 @@ public class Professor {
     private String formacao;
 
     @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
+    private Disciplina disciplina;
 
     @Embedded
     private Endereco endereco;

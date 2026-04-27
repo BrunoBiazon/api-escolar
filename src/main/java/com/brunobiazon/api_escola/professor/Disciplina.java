@@ -1,6 +1,6 @@
 package com.brunobiazon.api_escola.professor;
 
-public enum Especialidade {
+public enum Disciplina {
 
     PORTUGUES,
     MATEMATICA,
