@@ -1,7 +1,9 @@
 package com.brunobiazon.api_escola.controller;
 
-
 import com.brunobiazon.api_escola.professor.DadosCadastroProfessor;
+import com.brunobiazon.api_escola.professor.Professor;
+import com.brunobiazon.api_escola.professor.ProfessorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("professores")
 public class ProfessorController {
 
-    @PostMapping
-    public void cadastrar(@RequestBody DadosCadastroProfessor dados){
-        System.out.println(dados);
+    @Autowired
+    private ProfessorRepository repository;
 
+    @PostMapping
+    public void cadastrar(@RequestBody DadosCadastroProfessor dados) {
+        repository.save(new Professor(dados));
     }
 }

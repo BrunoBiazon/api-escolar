@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Professor {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
     private String nome;
     private String email;
     private String formacao;
@@ -27,4 +27,14 @@ public class Professor {
 
     @Embedded
     private Endereco endereco;
+
+    public Professor(DadosCadastroProfessor dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.disciplina = dados.disciplina();
+        this.formacao = dados.formacao();
+        this.endereco = new Endereco(dados.endereco());
+
+
+    }
 }
