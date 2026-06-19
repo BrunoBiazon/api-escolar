@@ -15,11 +15,14 @@ public record DadosCadastroProfessor(
         String email,
 
         @NotBlank
+        String telefone,
+
+        @NotBlank
         String formacao,
 
         @NotBlank
         Disciplina disciplina,
 
         @NotBlank @Valid DadosEndereco endereco) {
-
 }
+

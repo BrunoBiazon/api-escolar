@@ -18,8 +18,10 @@ public class Professor {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String email;
+    private String telefone;
     private String formacao;
 
     @Enumerated(EnumType.STRING)
@@ -31,10 +33,9 @@ public class Professor {
     public Professor(DadosCadastroProfessor dados) {
         this.nome = dados.nome();
         this.email = dados.email();
+        this.telefone = dados.telefone();
         this.disciplina = dados.disciplina();
         this.formacao = dados.formacao();
         this.endereco = new Endereco(dados.endereco());
-
-
     }
 }
