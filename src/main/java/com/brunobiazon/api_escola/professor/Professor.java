@@ -3,6 +3,7 @@ package com.brunobiazon.api_escola.professor;
 
 import jakarta.persistence.*;
 import com.brunobiazon.api_escola.endereco.Endereco;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -37,5 +38,26 @@ public class Professor {
         this.disciplina = dados.disciplina();
         this.formacao = dados.formacao();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public void atualizarDadosPorID(@Valid DadoAtualizarProfessor dadosAtualizar) {
+        if(dadosAtualizar.nome() != null){
+            this.nome = dadosAtualizar.nome();
+        }
+        if(dadosAtualizar.email() != null){
+            this.email = dadosAtualizar.email();
+        }
+        if(dadosAtualizar.telefone() != null){
+            this.telefone = dadosAtualizar.telefone();
+        }
+        if(dadosAtualizar.disciplina() != null){
+            this.disciplina = dadosAtualizar.disciplina();
+        }
+        if(dadosAtualizar.formacao() != null){
+            this.formacao = dadosAtualizar.formacao();
+        }
+        if(dadosAtualizar.endereco() != null){
+            this.endereco = new Endereco(dadosAtualizar.endereco());
+        }
     }
 }
