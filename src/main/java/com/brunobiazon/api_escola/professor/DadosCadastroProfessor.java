@@ -4,6 +4,7 @@ import com.brunobiazon.api_escola.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroProfessor(
 
@@ -20,9 +21,9 @@ public record DadosCadastroProfessor(
         @NotBlank
         String formacao,
 
-        @NotBlank
+        @NotNull
         Disciplina disciplina,
 
-        @NotBlank @Valid DadosEndereco endereco) {
+        @NotNull @Valid DadosEndereco endereco) {
 }
 
