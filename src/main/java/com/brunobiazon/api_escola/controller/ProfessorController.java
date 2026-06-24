@@ -6,6 +6,8 @@ import com.brunobiazon.api_escola.professor.Professor;
 import com.brunobiazon.api_escola.professor.ProfessorRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -24,7 +26,7 @@ public class ProfessorController {
     }
 
     @GetMapping
-    public List<DadosListagemProfessor> listar() {
-        return repository.findAll().stream().map(DadosListagemProfessor::new).toList();
+    public Page<DadosListagemProfessor> listar(Pageable paginacao) {           // Se enviar requisição por padrão o Spring retorna a listagem total, para utilizar a paginção é necessário -> GET | http://localhost:8080/professores?size=1&page=2
+        return repository.findAll(paginacao).map(DadosListagemProfessor::new); // Pageable já faz o .stream e .toList()
     }
 }
