@@ -33,6 +33,11 @@ public class ProfessorController {
     public void atualizar(@RequestBody @Valid DadoAtualizarProfessor dadosAtualizar) {
         var professor = repository.getReferenceById(dadosAtualizar.id());
         professor.atualizarDadosPorID(dadosAtualizar);
+    }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
     }
 }
