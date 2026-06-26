@@ -17,6 +17,12 @@ public record DadosCadastroAluno(
     String email,
 
     @NotBlank
+    String senha,
+
+    @NotBlank
+    String cpf,
+
+    @NotBlank
     String telefone,
 
     @NotBlank

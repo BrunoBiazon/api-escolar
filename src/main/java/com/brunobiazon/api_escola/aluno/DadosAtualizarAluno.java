@@ -5,6 +5,7 @@ import com.brunobiazon.api_escola.endereco.Endereco;
 import com.brunobiazon.api_escola.professor.DadoAtualizarProfessor;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 public record DadosAtualizarAluno(
@@ -12,6 +13,10 @@ public record DadosAtualizarAluno(
 
         @Email
         String email,
+
+        String senha,
+
+        String cpf,
 
         String telefone,
 
