@@ -16,7 +16,6 @@ public record DadosAtualizarAluno(
 
         String senha,
 
-        String cpf,
 
         String telefone,
 

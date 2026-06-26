@@ -14,6 +14,8 @@ public record DadoAtualizarProfessor(
 
         String nome,
 
+        String senha,
+
         @Email
         String email,
 

@@ -43,6 +43,9 @@ public class Aluno extends Pessoa {
         if(dadosAtualizar.email() != null){
             this.setEmail(dadosAtualizar.email());
         }
+        if(dadosAtualizar.senha() != null){
+            this.setSenha(dadosAtualizar.senha());
+        }
         if(dadosAtualizar.telefone() != null){
             this.setTelefone(dadosAtualizar.telefone());
         }
