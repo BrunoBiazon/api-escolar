@@ -5,8 +5,11 @@ import com.brunobiazon.api_escola.colaborador.Colaborador;
 import com.brunobiazon.api_escola.pessoa.Role;
 import jakarta.persistence.*;
 import com.brunobiazon.api_escola.endereco.Endereco;
+import com.brunobiazon.api_escola.turma.Turma;
 import jakarta.validation.Valid;
 import lombok.*;
+
+import java.util.List;
 
 @Table(name= "professores")
 @Entity(name= "Professor")
@@ -20,6 +23,9 @@ public class Professor extends Colaborador {
 
     @Enumerated(EnumType.STRING)
     private Disciplina disciplina;
+
+    @ManyToMany(mappedBy = "professores")
+    private List<Turma> turmas;
 
 
     public Professor(DadosCadastroProfessor dados) {

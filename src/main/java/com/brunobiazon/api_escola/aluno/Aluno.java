@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.brunobiazon.api_escola.turma.Turma;
+
 @Table(name= "Alunos")
 @Entity(name= "Aluno")
 @Getter
@@ -20,6 +22,10 @@ public class Aluno extends Pessoa {
 
     private String matricula; // 6 dígitos
     private String nome_responsavel;
+
+    @ManyToOne
+    @JoinColumn(name = "turma_id")
+    private Turma turma;
 
     public Aluno(DadosCadastroAluno dados) {
         this.setNome(dados.nome());

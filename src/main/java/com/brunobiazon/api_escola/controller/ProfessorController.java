@@ -23,6 +23,7 @@ public class ProfessorController {
     }
 
     @GetMapping
+    @Transactional(readOnly = true)
     public Page<DadosListagemProfessor> listar(Pageable paginacao) {           // Se enviar requisição por padrão o Spring retorna a listagem total, para utilizar a paginção é necessário -> GET | http://localhost:8080/professores?size=1&page=2
         return repository.findAll(paginacao).map(DadosListagemProfessor::new); // Pageable já faz o .stream e .toList()
         // Para ordenação, basta acrescentar ?sort=variavel | http://localhost:8080/professores?sort=nome
