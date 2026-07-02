@@ -28,9 +28,10 @@ public class AlunoController {
     }
 
     @PutMapping
-    public Aluno atualizar(@RequestBody @Valid DadosAtualizarAluno dadosAtualizar) {
-        var professor = repository.getReferenceById(dadosAtualizar.id());
-        professor.atualizarDadosPorID(dadosAtualizar);
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizarAluno dadosAtualizar) {
+        var aluno = repository.getReferenceById(dadosAtualizar.id());
+        aluno.atualizarDadosPorID(dadosAtualizar);
     }
 
 
