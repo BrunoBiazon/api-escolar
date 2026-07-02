@@ -2,33 +2,58 @@ package com.brunobiazon.api_escola.colaborador;
 
 import com.brunobiazon.api_escola.endereco.Endereco;
 import com.brunobiazon.api_escola.pessoa.Pessoa;
-
 import com.brunobiazon.api_escola.pessoa.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Table(name = "Colaboradores")
 @Entity(name = "Colaborador")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Colaborador extends Pessoa {
 
-public class Colaborador extends Pessoa{
-
-    private String setor;
-    private String cargo;
+    @Enumerated(EnumType.STRING)
+    private Cargo cargo;
 
     public Colaborador(DadosCadastroColaborador dados) {
         this.setNome(dados.nome());
         this.setEmail(dados.email());
-        this.setCargo(dados.cargo());
+        this.setSenha(dados.senha());
         this.setCpf(dados.cpf());
         this.setTelefone(dados.telefone());
         this.setEndereco(new Endereco(dados.endereco()));
         this.setRole(Role.ROLE_COLABORADOR);
+        try {
+            this.cargo = Cargo.valueOf(dados.cargo().toUpperCase());
+        } catch (Exception e) {
+            this.cargo = Cargo.ADMINISTRATIVO;
+        }
+    }
 
-        this.setor = dados.setor();
-        this.cargo = dados.cargo();
+    public void atualizarDadosPorID(@Valid DadosAtualizarColaborador dadosAtualizar) {
+        if (dadosAtualizar.nome() != null) {
+            this.setNome(dadosAtualizar.nome());
+        }
+        if (dadosAtualizar.email() != null) {
+            this.setEmail(dadosAtualizar.email());
+        }
+        if (dadosAtualizar.senha() != null) {
+            this.setSenha(dadosAtualizar.senha());
+        }
+        if (dadosAtualizar.telefone() != null) {
+            this.setTelefone(dadosAtualizar.telefone());
+        }
+        if (dadosAtualizar.cargo() != null) {
+            this.cargo = dadosAtualizar.cargo();
+        }
+        if (dadosAtualizar.endereco() != null) {
+            this.setEndereco(new Endereco(dadosAtualizar.endereco()));
+        }
     }
 }

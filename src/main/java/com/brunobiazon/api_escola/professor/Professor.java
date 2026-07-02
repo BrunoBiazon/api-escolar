@@ -1,7 +1,8 @@
-
 package com.brunobiazon.api_escola.professor;
 
-import com.brunobiazon.api_escola.pessoa.Pessoa;
+import com.brunobiazon.api_escola.colaborador.Cargo;
+import com.brunobiazon.api_escola.colaborador.Colaborador;
+import com.brunobiazon.api_escola.pessoa.Role;
 import jakarta.persistence.*;
 import com.brunobiazon.api_escola.endereco.Endereco;
 import jakarta.validation.Valid;
@@ -13,7 +14,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Professor extends Pessoa {
+public class Professor extends Colaborador {
 
     private String formacao;
 
@@ -28,6 +29,8 @@ public class Professor extends Pessoa {
         this.setCpf(dados.cpf());
         this.setTelefone(dados.telefone());
         this.setEndereco(new Endereco(dados.endereco()));
+        this.setRole(Role.ROLE_COLABORADOR);
+        this.setCargo(Cargo.DOCENTE);
 
         this.disciplina = dados.disciplina();
         this.formacao = dados.formacao();

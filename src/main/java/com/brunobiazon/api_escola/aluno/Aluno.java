@@ -31,7 +31,6 @@ public class Aluno extends Pessoa {
 
         this.setRole(Role.ROLE_ALUNO);
 
-
         this.matricula = dados.matricula();
         this.nome_responsavel = dados.nome_responsavel();
     }
