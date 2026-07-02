@@ -34,6 +34,11 @@ public class AlunoController {
         aluno.atualizarDadosPorID(dadosAtualizar);
     }
 
+    @DeleteMapping
+    @Transactional
+    public void deletar(@RequestParam @Valid Long id){
+        repository.deleteById(id);
+    }
 
 }
 
