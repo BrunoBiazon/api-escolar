@@ -3,6 +3,7 @@ package com.brunobiazon.api_escola.controller;
 import com.brunobiazon.api_escola.aluno.*;
 import com.brunobiazon.api_escola.aluno.DadosCadastroAluno;
 import com.brunobiazon.api_escola.professor.DadosListagemProfessor;
+import com.brunobiazon.api_escola.turma.TurmaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,10 +17,18 @@ public class AlunoController {
     @Autowired
     private AlunoRepository repository;
 
+    @Autowired
+    private TurmaRepository turmaRepository;
+
     @PostMapping
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosCadastroAluno dados) {
-        repository.save(new Aluno(dados));
+        var aluno = new Aluno(dados);
+        if (dados.turmaId() != null) {
+            var turma = turmaRepository.getReferenceById(dados.turmaId());
+            aluno.setTurma(turma);
+        }
+        repository.save(aluno);
     }
 
     @GetMapping
@@ -32,6 +41,10 @@ public class AlunoController {
     public void atualizar(@RequestBody @Valid DadosAtualizarAluno dadosAtualizar) {
         var aluno = repository.getReferenceById(dadosAtualizar.id());
         aluno.atualizarDadosPorID(dadosAtualizar);
+        if (dadosAtualizar.turmaId() != null) {
+            var turma = turmaRepository.getReferenceById(dadosAtualizar.turmaId());
+            aluno.setTurma(turma);
+        }
     }
 
     @DeleteMapping

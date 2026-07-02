@@ -32,5 +32,7 @@ public record DadosCadastroAluno(
     @NotBlank
     String nome_responsavel,
 
-    @NotNull @Valid DadosEndereco endereco) {
+    @NotNull @Valid DadosEndereco endereco,
+    
+    Long turmaId) {
     }

@@ -28,6 +28,8 @@ public record DadosAtualizarAluno(
 
         String nome_responsavel,
 
-        @Valid DadosEndereco endereco) {
+        @Valid DadosEndereco endereco,
+        
+        Long turmaId) {
 
 }
