@@ -1,7 +1,5 @@
 package com.brunobiazon.api_escola.professor.domain;
 
-import com.brunobiazon.api_escola.professor.domain.*;
-import com.brunobiazon.api_escola.professor.dto.*;
 
 public enum Disciplina {
 
