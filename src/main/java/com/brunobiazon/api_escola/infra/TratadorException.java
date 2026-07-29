@@ -1,0 +1,15 @@
+package com.brunobiazon.api_escola.infra;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import jakarta.persistence.EntityNotFoundException;
+
+@RestControllerAdvice
+public class TratadorException {
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity TratarErro404() {
+        return ResponseEntity.notFound().build();
+    }
+}
