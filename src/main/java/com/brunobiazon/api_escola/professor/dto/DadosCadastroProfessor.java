@@ -1,9 +1,7 @@
 package com.brunobiazon.api_escola.professor.dto;
 
-import com.brunobiazon.api_escola.professor.domain.*;
-import com.brunobiazon.api_escola.professor.dto.*;
-
 import com.brunobiazon.api_escola.endereco.dto.DadosEndereco;
+import com.brunobiazon.api_escola.professor.domain.Disciplina;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

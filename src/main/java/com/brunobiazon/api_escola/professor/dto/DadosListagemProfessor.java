@@ -1,7 +1,7 @@
 package com.brunobiazon.api_escola.professor.dto;
 
-import com.brunobiazon.api_escola.professor.domain.*;
-
+import com.brunobiazon.api_escola.professor.domain.Disciplina;
+import com.brunobiazon.api_escola.professor.domain.Professor;
 import java.util.List;
 
 public record DadosListagemProfessor(Long Id, String nome, String email, Disciplina discplina, String formacao, List<DadosListagemTurmasProfessor> turmas) {

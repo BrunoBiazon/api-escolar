@@ -1,8 +1,5 @@
 package com.brunobiazon.api_escola.turma.domain;
 
-import com.brunobiazon.api_escola.turma.domain.*;
-import com.brunobiazon.api_escola.turma.dto.*;
-
 import com.brunobiazon.api_escola.professor.domain.Professor;
 import com.brunobiazon.api_escola.aluno.domain.Aluno;
 import jakarta.persistence.*;
@@ -31,11 +28,7 @@ public class Turma {
     private Etapa_ensino etapaEnsino;
 
     @ManyToMany
-    @JoinTable(
-            name = "turma_professores",
-            joinColumns = @JoinColumn(name = "turma_id"),
-            inverseJoinColumns = @JoinColumn(name = "professor_id")
-    )
+    @JoinTable(name = "turma_professores", joinColumns = @JoinColumn(name = "turma_id"), inverseJoinColumns = @JoinColumn(name = "professor_id"))
     private List<Professor> professores;
 
     @OneToMany(mappedBy = "turma")

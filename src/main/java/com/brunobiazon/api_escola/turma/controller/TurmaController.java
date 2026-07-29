@@ -1,8 +1,5 @@
 package com.brunobiazon.api_escola.turma.controller;
 
-import com.brunobiazon.api_escola.turma.domain.*;
-import com.brunobiazon.api_escola.turma.dto.*;
-
 import com.brunobiazon.api_escola.professor.domain.ProfessorRepository;
 import com.brunobiazon.api_escola.turma.dto.DadosCadastroTurma;
 import com.brunobiazon.api_escola.turma.dto.DadosAtualizarTurma;

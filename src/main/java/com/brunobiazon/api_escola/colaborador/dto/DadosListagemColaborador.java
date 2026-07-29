@@ -1,8 +1,7 @@
 package com.brunobiazon.api_escola.colaborador.dto;
 
-import com.brunobiazon.api_escola.colaborador.domain.*;
-import com.brunobiazon.api_escola.colaborador.dto.*;
-
+import com.brunobiazon.api_escola.colaborador.domain.Cargo;
+import com.brunobiazon.api_escola.colaborador.domain.Colaborador;
 import com.brunobiazon.api_escola.endereco.domain.Endereco;
 import com.brunobiazon.api_escola.pessoa.domain.Role;
 

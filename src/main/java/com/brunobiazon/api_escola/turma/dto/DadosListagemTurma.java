@@ -1,11 +1,9 @@
 package com.brunobiazon.api_escola.turma.dto;
 
-import com.brunobiazon.api_escola.turma.domain.*;
-import com.brunobiazon.api_escola.turma.dto.*;
-
 import com.brunobiazon.api_escola.aluno.dto.DadosListagemAluno;
 import com.brunobiazon.api_escola.professor.dto.DadosListagemProfessor;
-
+import com.brunobiazon.api_escola.turma.domain.Etapa_ensino;
+import com.brunobiazon.api_escola.turma.domain.Turma;
 import java.util.List;
 
 public record DadosListagemTurma(

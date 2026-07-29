@@ -1,8 +1,6 @@
 package com.brunobiazon.api_escola.turma.dto;
 
-import com.brunobiazon.api_escola.turma.domain.*;
-import com.brunobiazon.api_escola.turma.dto.*;
-
+import com.brunobiazon.api_escola.turma.domain.Etapa_ensino;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 

@@ -1,7 +1,10 @@
 package com.brunobiazon.api_escola.professor.controller;
 
-import com.brunobiazon.api_escola.professor.domain.*;
-import com.brunobiazon.api_escola.professor.dto.*;
+import com.brunobiazon.api_escola.professor.domain.Professor;
+import com.brunobiazon.api_escola.professor.domain.ProfessorRepository;
+import com.brunobiazon.api_escola.professor.dto.DadoAtualizarProfessor;
+import com.brunobiazon.api_escola.professor.dto.DadosCadastroProfessor;
+import com.brunobiazon.api_escola.professor.dto.DadosListagemProfessor;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

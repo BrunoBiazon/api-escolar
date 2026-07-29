@@ -1,8 +1,5 @@
 package com.brunobiazon.api_escola.endereco.dto;
 
-import com.brunobiazon.api_escola.endereco.domain.*;
-import com.brunobiazon.api_escola.endereco.dto.*;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 

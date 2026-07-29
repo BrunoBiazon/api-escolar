@@ -1,17 +1,16 @@
 package com.brunobiazon.api_escola.professor.domain;
 
-import com.brunobiazon.api_escola.professor.dto.*;
-
 import com.brunobiazon.api_escola.colaborador.domain.Cargo;
 import com.brunobiazon.api_escola.colaborador.domain.Colaborador;
-import com.brunobiazon.api_escola.pessoa.domain.Role;
-import jakarta.persistence.*;
 import com.brunobiazon.api_escola.endereco.domain.Endereco;
+import com.brunobiazon.api_escola.pessoa.domain.Role;
+import com.brunobiazon.api_escola.professor.dto.DadoAtualizarProfessor;
+import com.brunobiazon.api_escola.professor.dto.DadosCadastroProfessor;
 import com.brunobiazon.api_escola.turma.domain.Turma;
+import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Table(name= "professores")
 @Entity(name= "Professor")

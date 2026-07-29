@@ -1,8 +1,6 @@
 package com.brunobiazon.api_escola.endereco.domain;
 
-import com.brunobiazon.api_escola.endereco.domain.*;
-import com.brunobiazon.api_escola.endereco.dto.*;
-
+import com.brunobiazon.api_escola.endereco.dto.DadosEndereco;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

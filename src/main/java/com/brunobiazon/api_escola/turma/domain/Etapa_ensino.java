@@ -1,8 +1,5 @@
 package com.brunobiazon.api_escola.turma.domain;
 
-import com.brunobiazon.api_escola.turma.domain.*;
-import com.brunobiazon.api_escola.turma.dto.*;
-
 public enum Etapa_ensino {
 
     // Fundamental
