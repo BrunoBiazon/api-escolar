@@ -5,25 +5,18 @@ import jakarta.validation.constraints.Pattern;
 
 public record DadosEndereco(
 
-        @NotBlank
-        String logradouro,
+                @NotBlank(message = "O logradouro deve ser preenchido.") String logradouro,
 
-        @NotBlank
-        String bairro,
+                @NotBlank(message = "O bairro deve ser preenchido.") String bairro,
 
-        @NotBlank
-        @Pattern(regexp = "\\d{8}")
-        String cep,
+                @NotBlank(message = "O CEP deve ser preenchido.") @Pattern(regexp = "\\d{8}") String cep,
 
-        @NotBlank
-        String uf,
+                @NotBlank(message = "A UF deve ser preenchida.") String uf,
 
-        // Opcional o cadastro
-        String complemento,
+                // Opcional o cadastro
+                String complemento,
 
-        @NotBlank
-        String numero,
+                @NotBlank(message = "O número deve ser preenchido.") String numero,
 
-        @NotBlank
-        String cidade) {
+                @NotBlank(message = "A cidade deve ser preenchida.") String cidade) {
 }
