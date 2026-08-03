@@ -8,22 +8,20 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadoAtualizarProfessor(
 
-        @NotNull
-        Long id,
+                @NotNull Long id,
 
-        String nome,
+                String nome,
 
-        String senha,
+                String senha,
 
-        @Email
-        String email,
+                @Email(message = "O email deve ser válido.") String email,
 
-        String telefone,
+                String telefone,
 
-        String formacao,
+                String formacao,
 
-        Disciplina disciplina,
+                Disciplina disciplina,
 
-        @Valid DadosEndereco endereco){
+                @Valid DadosEndereco endereco) {
 
 }

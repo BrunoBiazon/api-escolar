@@ -7,6 +7,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import org.springframework.validation.FieldError;
+import org.springframework.dao.DataIntegrityViolationException;
 
 @RestControllerAdvice
 public class TratadorException {
@@ -22,9 +23,17 @@ public class TratadorException {
         return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
 
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity tratarErro400Duplicidade(DataIntegrityViolationException exception) {
+        return ResponseEntity.badRequest().body(new DadosErroMensagem("Dado já cadastrado no sistema."));
+    }
+
     private record DadosErroValidacao(String campo, String mensagem) {
         public DadosErroValidacao(FieldError erro) {
             this(erro.getField(), erro.getDefaultMessage());
         }
+    }
+
+    private record DadosErroMensagem(String mensagem) {
     }
 }

@@ -5,9 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public record DadosCadastroTurma(
-        @NotNull
-        Etapa_ensino etapaEnsino,
+                @NotNull(message = "A etapa de ensino deve ser preenchida.") Etapa_ensino etapaEnsino,
 
-        List<Long> professoresIds
-) {
+                List<Long> professoresIds) {
 }

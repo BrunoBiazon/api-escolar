@@ -7,29 +7,19 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroColaborador(
-    @NotBlank
-    String nome,
+        @NotBlank(message = "O nome deve ser preenchido.") String nome,
 
-    @NotBlank
-    @Email
-    String email,
+        @NotBlank(message = "O email deve ser preenchido.") @Email(message = "O email deve ser válido.") String email,
 
-    @NotBlank
-    String senha,
+        @NotBlank(message = "A senha deve ser preenchida.") String senha,
 
-    @NotBlank
-    String cpf,
+        @NotBlank(message = "O CPF deve ser preenchido.") String cpf,
 
-    @NotBlank
-    String telefone,
+        @NotBlank(message = "O telefone deve ser preenchido.") String telefone,
 
-    @NotBlank
-    String setor,
+        @NotBlank(message = "O setor deve ser preenchido.") String setor,
 
-    @NotBlank
-    String cargo,
+        @NotBlank(message = "O cargo deve ser preenchido.") String cargo,
 
-    @NotNull
-    @Valid
-    DadosEndereco endereco) {
-    }
+        @NotNull(message = "O endereço deve ser preenchido.") @Valid DadosEndereco endereco) {
+}

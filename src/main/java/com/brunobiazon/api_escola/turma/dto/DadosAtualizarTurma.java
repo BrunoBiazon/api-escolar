@@ -5,11 +5,9 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public record DadosAtualizarTurma(
-        @NotNull
-        Long id,
+                @NotNull Long id,
 
-        Etapa_ensino etapaEnsino,
+                Etapa_ensino etapaEnsino,
 
-        List<Long> professoresIds
-) {
+                List<Long> professoresIds) {
 }
