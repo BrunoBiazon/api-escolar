@@ -1,11 +1,10 @@
-package com.brunobiazon.api_escola.infra;
+package com.brunobiazon.api_escola.infra.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-
 import org.springframework.validation.FieldError;
 import org.springframework.dao.DataIntegrityViolationException;
 
